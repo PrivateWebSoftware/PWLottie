@@ -1,0 +1,3 @@
+[submodule "src/modules/rlottie"]
+	path = src/modules/rlottie
+	url = https://github.com/PrivateWebSoftware/rlottie
