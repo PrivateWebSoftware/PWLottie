@@ -1,0 +1,11 @@
+PWLottie basically comes with Apache license(LICENSE)
+but some parts of shared code are covered by different licenses. Listed
+below are the folder names and the license file covering it. Note that this
+license would cover all of the source invovled in each folders, unless
+specifically noted otherwise. So please refer to these imported project sources
+for details.
+
+Dependencies and licenses:
+
+Qt (https://www.qt.io/)
+rlottie (https://github.com/Samsung/rlottie/tree/master)
