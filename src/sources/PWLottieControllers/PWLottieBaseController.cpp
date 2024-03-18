@@ -10,8 +10,6 @@
 
 #include "include/PWLottieControllers/PWLottieBaseController.h"
 
-#include <QDebug>
-
 PWLottieBaseController::PWLottieBaseController(QObject* parent)
     : PWLottieAbstractController { parent }
 {
