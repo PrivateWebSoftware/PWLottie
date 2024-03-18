@@ -139,3 +139,50 @@ PWLottieItem {
 ```
 
 ## Writing own Controllers 
+
+PWLottie provides only examples of controllers, if you want to create more complex controllers you will have to write them yourself:
+
+1. You need to create class that inherits from `PWLottieAbstractController`;
+2. You need to override `addLottieItem()` and `removeLottieItem()` functions. In this functions you will calculate fps of lottie animation.
+3. Write needed functional for your controller, for example, turning off aniamtion if user have low battery perstange or low down fps if controller have too many fps registred.
+4. Now we need to intialize functional in `PWControllerMediator`:
+    1. In `PWControllerMediator` class you need to add your controller name in `ControllerType` enum.
+    2. In `private` section of class add your controller class with `inline static`: `inline static MyController m_myController;`
+    3. Now we need to add registration and unregistration in `PWControllerMediator`. In functions `registerLottieAnimation` and `unregisterLottieAnimation` just add:
+   ```cpp
+   /* For registration */
+   else if (controllerType == ControllerType::MyController) {
+        return m_myController.addLottieItem(lottieUuid);
+   }
+
+   /* For unregistration */
+   else if (controllerType == ControllerType::MyController) {
+        m_myController.removeLottieItem(lottieUuid);
+   }
+   ```
+   4. If you need to invoke signal in `PWLottieItem` connect your controller signal in `PWControllerMediator` constructor.
+   ```cpp
+    connect(&m_myController, &MyController::fpsChanged, this, [=](const quint16 fps, const QString& lottieUuid) {
+        emit instance()->fpsChanged(fps, PWControllerMediator::MyController, lottieUuid);
+    });
+   ```
+5. And for the finale we need to make some changes to `PWLottieItem`:
+    1. In `setController` function just connect signal that we connected in 4.4:
+    ```cpp
+    connect(PWControllerMediator::instance(), &PWControllerMediator::fpsChanged, this, [=, this](const quint16 fps, const PWControllerMediator::ControllerType controllerType, const QString& lottieUuid) {
+        if (lottieUuid == allLottiesDefiner || lottieUuid == m_lottieUuid) {
+            setFrameRate(fps);
+        }
+    });
+    ```
+6. In the QML item, specify the name of the controller that you specified in enum:
+```qml
+import PrivateWeb.PWLottie
+import PrivateWeb.PWLottie.Controllers
+
+PWLottieItem {
+...
+    controller: ControllerType.MyController
+...
+}
+``` 
