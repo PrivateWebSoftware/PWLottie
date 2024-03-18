@@ -80,20 +80,15 @@ PWLottieItem {
 
 **Properties that can be accessed with PWLottieItem:**
 
-`running` - Property determines whether the lottie is running.
-
-`frameRate` - Current framerate of lottie animation. Not recommended to set it after initializing value when using controllers. Default: `60`. 
-
-`loops` - Loops of lottie animation. `0` value for infinite loop. Default: `0`.
-
-`duration` - Duration of lottie animation that rlottie sets.
-
-`sourceSize` - Source size of lottie animation. Important to set it with the default values: `width`, `height`. Property determines in wich resolution will the image be rendered in.
-
-`source` - Source image. Avoid `qrc` and `file:/`, when setting this value.
-
-`controller` - Controller that will be used for controlling animation. By default: `NoController`.
-
+```
+running - Property determines whether the lottie is running.
+frameRate - Current framerate of lottie animation. Not recommended to set it after initializing value when using controllers. Default: '60'. 
+loops - Loops of lottie animation. '0' value for infinite loop. Default: '0'.
+duration - Duration of lottie animation that rlottie sets.
+sourceSize - Source size of lottie animation. Important to set it with the default values: 'width', 'height'. Property determines in wich resolution will the image be rendered in.
+source - Source image. Avoid 'qrc' and 'file:/', when setting this value.
+controller - Controller that will be used for controlling animation. By default: 'NoController'.
+```
 
 ## Using Controllers in QML Project
 
