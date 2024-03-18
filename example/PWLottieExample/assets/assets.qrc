@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/lotties">
+        <file>Lotties/normal-prefomance.json</file>
+        <file>Lotties/not-optimized-perfomance.json</file>
+        <file>Lotties/optimized-perfomance.json</file>
+    </qresource>
+</RCC>
