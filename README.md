@@ -17,9 +17,9 @@ In the last example we can see how laggy the interface is without controllers.
 
 This happens because the application tries to render a lot of animations at once at 60 fps, which is extremely problematic for the interface. 
 
-To fix this, we include a controller that registers the animations that are currently being rendered and reduces their FPS to the one we designated, after which we can observe the smoothness of the interface.
+To fix this, we enable a controller that registers the currently rendering animations and reduces their FPS to the lower fps that we set in controller, after which we can see the smoothness of the interface.
 
-We can use controllers, for example, to improve basic interface optimization, improve optimization on weaker machines when the user has low computing resources, or when the user has low battery power ans e.t.c.
+We can use controllers, for example, to improve basic interface optimization, improve optimization on weaker machines when the user has low computing resources, or when the user has low battery power and e.t.c.
 
 ## Building PWLottie
 
