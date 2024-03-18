@@ -7,6 +7,20 @@ PWLottie provides additional functional for creating controllers to support opti
 
 The project presents two examples, the first example is a basic example of a controller that stores the number of registered lottie animations and sets their FPS depending on their number and the second just empty example that inherited from abstract controller.
 
+
+https://github.com/PrivateWebSoftware/PWLottie/assets/66485293/882834d1-bc6b-4425-b7a5-3edff8774946
+
+https://github.com/PrivateWebSoftware/PWLottie/assets/66485293/dc9370bc-21e5-47f5-837b-adbc41cf9282 
+
+
+In the last example we can see how laggy the interface is without controllers. 
+
+This happens because the application tries to render a lot of animations at once at 60 fps, which is extremely problematic for the interface. 
+
+To fix this, we include a controller that registers the animations that are currently being rendered and reduces their FPS to the one we designated, after which we can observe the smoothness of the interface.
+
+We can use controllers, for example, to improve basic interface optimization, improve optimization on weaker machines when the user has low computing resources, or when the user has low battery power ans e.t.c.
+
 ## Building PWLottie
 
 Create a build directory for out of source `build`
