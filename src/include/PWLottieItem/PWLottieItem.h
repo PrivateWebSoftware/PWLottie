@@ -39,7 +39,7 @@ class PWLottieItem : public QQuickPaintedItem {
     Q_OBJECT
     QML_ELEMENT
 
-    Q_PROPERTY(bool running READ running WRITE setRunning NOTIFY runningChanged)
+    Q_PROPERTY(bool running READ running NOTIFY runningChanged)
     Q_PROPERTY(qint32 frameRate READ frameRate WRITE setFrameRate NOTIFY frameRateChanged)
     Q_PROPERTY(qint32 loops READ loops WRITE setLoops NOTIFY loopsChanged)
     Q_PROPERTY(qreal duration READ duration NOTIFY durationChanged)
@@ -73,13 +73,6 @@ public:
     [[nodiscard]] inline bool running() const
     {
         return m_running;
-    }
-
-    inline void setRunning(const bool running)
-    {
-        m_running = running;
-
-        emit runningChanged();
     }
 
     /**************/
@@ -197,6 +190,8 @@ public slots:
     {
         if (!m_running) {
             m_running = true;
+
+            /* Start rendering */
             this->render();
         }
     }

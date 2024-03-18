@@ -9,7 +9,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include "include/PWLottieItem/PWLottieItem.h"
+#include <PWLottieItem.h>
 
 int main(int argc, char* argv[])
 {
