@@ -78,7 +78,7 @@ PWLottieItem {
 }
 ```
 
-Properties that can be accessed with PWLottieItem:
+**Properties that can be accessed with PWLottieItem:**
 
 `running` - Property determines whether the lottie is running.
 
