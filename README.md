@@ -124,7 +124,7 @@ Then in `main.qml` import PWLottieControllers with:
 import PrivateWeb.PWLottie.Controllers
 ```
 
-Example of accessing controller in qml:
+Example of accessing controller in QML:
 
 ```
 PWLottieItem {
