@@ -53,13 +53,13 @@ void PWLottieItem::setSourceSize(const QSizeF& sourceSize)
 void PWLottieItem::setController(const PWControllerMediator::ControllerType controllerType)
 {
     if (controllerType != PWControllerMediator::ControllerType::NoController) {
-        /* Set controller if we haven't set it before s*/
+        /* Set controller if we haven't set it before */
         m_controllerType = controllerType;
 
         /* Register lottie item in controller */
         setFrameRate(PWControllerMediator::registerLottieAnimation(m_controllerType, m_lottieUuid));
 
-        /* If controller changed framerate, change it in lottie item*/
+        /* If controller changed framerate, change it in lottie item */
         connect(PWControllerMediator::instance(), &PWControllerMediator::fpsChanged, this, [=, this](const quint16 fps, const PWControllerMediator::ControllerType controllerType, const QString& lottieUuid) {
             if (lottieUuid == allLottiesDefiner || lottieUuid == m_lottieUuid) {
                 setFrameRate(fps);
